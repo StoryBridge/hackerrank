@@ -4,7 +4,7 @@ public class Refactoring {
 	public static void main(String[] args) {
 		pZgubun gubun = new pZgubun();
 		gubun.checkDz = true;
-		gubun.P_ZGUBUN(1);
+		gubun.P_ZGUBUN(5);
 	}
 }
 
@@ -16,10 +16,7 @@ class pZgubun {
 			System.out.println("P_ZGUBUN is " + P_ZGUBUN);
 			GET_BSID();
 			GET_BSAD();
-			if (checkDz = true) {
-				GET_BSIS_DZ();
-				GET_BSAS_DZ();
-			}
+			GET_DZ(checkDz);
 		} else if (P_ZGUBUN == 12 || P_ZGUBUN == 13) {
 			System.out.println("P_ZGUBUN is " + P_ZGUBUN);
 			GET_BSID();
@@ -28,18 +25,12 @@ class pZgubun {
 			System.out.println("P_ZGUBUN is " + P_ZGUBUN);
 			GET_BSID();
 			GET_BSAD();
-			if (checkDz = true) {
-				GET_BSIS_DZ();
-				GET_BSAS_DZ();
-			}
+			GET_DZ(checkDz);
 		} else if (P_ZGUBUN == 2 || P_ZGUBUN == 9 || P_ZGUBUN == 10 || P_ZGUBUN == 11 || P_ZGUBUN == 16) {
 			System.out.println("P_ZGUBUN is " + P_ZGUBUN);
 			GET_BSIK();
 			GET_BSAK();
-			if (checkDz = true) {
-				GET_BSIS_DZ();
-				GET_BSAS_DZ();
-			}
+			GET_DZ(checkDz);
 		} else {
 			System.out.println("Exception");
 		}
@@ -78,4 +69,11 @@ class pZgubun {
 		System.out.println("GET_BSAS_DZ");
 	}
 
+	void GET_DZ(boolean checkDz) {
+		if (checkDz = true) {
+			GET_BSIS_DZ();
+			GET_BSAS_DZ();
+		}
+		
+	}
 } // end P_ZGUBUN
