@@ -22,7 +22,7 @@ public class Solution {
 	        	}
 	        	System.out.println(grades[i]);
 	        }
-	        
+	        System.out.println();
 	        return grades;
 
 	    }
