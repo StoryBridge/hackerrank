@@ -29,3 +29,20 @@ preeti preeti@gmail.com
 alice alice@alicegmail.com
 alice alice@gmail.com
 alice gmail.alice@gmail.com
+
+
+//output
+//alice
+//alice
+//julia
+//julia
+//julia
+//julia
+//preeti
+//priya
+//riya
+//riya
+//samantha
+//samantha
+//tanya
+//tanya
