@@ -10,7 +10,32 @@ public class Solution {
 
     // Complete the countApplesAndOranges function below.
     static void countApplesAndOranges(int s, int t, int a, int b, int[] apples, int[] oranges) {
+        int startPoint = s;
+		int endPoint = t;
+		int applePoint = a;
+		int orangePoint = b;
+		int appleResult = 0;
+		int orrangeResult = 0;
+		
+		int apple;
+		for (int i : apples) {
+			apple = 0;
+			apple = applePoint + i;
+			if (apple >= startPoint & apple <= endPoint) {
+				appleResult++;
+			}
+		}
 
+		int orange;
+		for (int i : oranges) {
+			orange = 0;
+			orange = i + orangePoint;
+			if (orange >= startPoint & orange <= endPoint) {
+				orrangeResult++;
+			}
+		}
+		System.out.println(appleResult);
+		System.out.println(orrangeResult);
 
     }
 
