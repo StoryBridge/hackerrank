@@ -10,23 +10,19 @@ public class Solution {
 
     // Complete the rotLeft function below.
     static int[] rotLeft(int[] a, int d) {
-       
-        int k = d;
-        int n = a.length;
-        
-        if (d >= n) {
-            d = d % n;
+        int length = a.length;
+        int[] temp = new int[length];
+        if (d == 0) {
+            return a;
         }
-        
-        if (d == 0) return a;
-        
-        int[] temp = new int[n];
-        
-        for (int i = 0; i < n; i++) {
-            if (i + d < n) {
-                temp[i] = a[i + d];
+        if (length < d) {
+            d = length % d;
+        }
+        for (int i = 0; i < length; i++) {
+            if (i + d >= length) {
+                temp[i] = a[(i + d) % length];
             } else {
-                temp[i] = a[(i + d) - n];
+                temp[i] = a[i + d];
             }
         }
         return temp;
@@ -67,6 +63,6 @@ public class Solution {
 
         bufferedWriter.close();
 
-        scanner.close();
+        scanner.close();    
     }
 }
