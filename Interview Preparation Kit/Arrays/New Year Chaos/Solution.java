@@ -9,15 +9,10 @@ public class Solution {
 		int bribe = 0; // 뇌물 횟수
 		int dif = 0;
 		boolean checkChaotic = false;
-		// initList 초기화 ex) if q is 5, then initList is [1, 2, 3, 4, 5]
-		int[] initList = new int[length];
-		for (int i = 0; i < length; i++) {
-			initList[i] = i + 1;
-		}
 
 		// q - initList check
 		for (int i = 0; i < length; i++) {
-			dif = q[i] - initList[i];
+			dif = q[i] - (i+1);
 			if (dif > 2) {
 				checkChaotic = true;
 
