@@ -8,7 +8,7 @@ public class Solution {
 	// Complete the arrayManipulation function below.
 	static long arrayManipulation(int n, int[][] queries) {
 		// initialize arr
-		long[] arr = new long[n];
+		long[] arr = new long[n+1];
 		long max = 0;
 
 //		for (int i = 0; i < queries.length; i++) {
@@ -17,7 +17,7 @@ public class Solution {
 //			}
 //			System.out.println();
 //		}
-
+		
 		for (int i = 0; i < queries.length; i++) {
 			arr[queries[i][0]-1] += queries[i][2];
 			arr[queries[i][1]-1] -= queries[i][2];
@@ -27,22 +27,11 @@ public class Solution {
 		for(int i=0; i< n; i++) {
 			sum += arr[i];
 			max = Math.max(max, sum);
-					
 		}
-		
-		
-//		for (int i = 0; i < queries.length; i++) {
-//			for (int j = queries[i][0]; j <= queries[i][1]; j++) {
-//				arr[j - 1] += queries[i][2];
-//				if (max < arr[j - 1]) {
-//					max = arr[j - 1];
-//				}
-//			}
-//		}
 
-		// for(int i= 0; i< arr.length; i++) {
-		// System.out.print(arr[i] + " ");
-		// }
+//		 for(int i= 0; i< arr.length; i++) {
+//		 System.out.print(arr[i] + " ");
+//		 }
 		System.out.println(max);
 		return max;
 	}
