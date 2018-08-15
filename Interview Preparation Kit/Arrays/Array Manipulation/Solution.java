@@ -9,18 +9,13 @@ public class Solution {
 	static long arrayManipulation(int n, int[][] queries) {
 		// initialize arr
 		long[] arr = new long[n+1];
-		long max = 0;
+		long max = arr[0];
 
-//		for (int i = 0; i < queries.length; i++) {
-//			for (int j = 0; j < 3; j++) {
-//				System.out.print(queries[i][j] + " ");
-//			}
-//			System.out.println();
-//		}
+
 		
 		for (int i = 0; i < queries.length; i++) {
 			arr[queries[i][0]-1] += queries[i][2];
-			arr[queries[i][1]-1] -= queries[i][2];
+			arr[queries[i][1]] -= queries[i][2];
 		}
 		long sum = 0;
 		
