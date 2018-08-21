@@ -10,23 +10,29 @@ public class Solution {
 
     // Complete the twoStrings function below.
     static String twoStrings(String s1, String s2) {
-        char[] c1 = s1.toCharArray();
-        char[] c2 = s2.toCharArray();
-        int match = 0;
-        String yn = "NO";
-        for (int i = 0; i < c1.length; i++) {
-            for (int j = 0; j < c2.length; j++) {
-                if (c1[i] == c2[j]) {
-                    match++;
-                    if (match >= 2) {
-                        yn = "YES";
-                        break;
-                    }
-                }
+        HashMap<Character, Integer> hm1 = new HashMap<>();
+        HashMap<Character, Integer> hm2 = new HashMap<>();
+        boolean condition = false;
+        for (int i = 0; i < s1.length(); i++) {
+            char ch = s1.charAt(i);
+            hm1.put(ch, 1);
+        }
+        for (int i = 0; i < s2.length(); i++) {
+            char ch = s2.charAt(i);
+            hm2.put(ch, 1);
+        }
+        // Set 컬렉션 클래스
+		// Set 인터페이스를 구현한 모든 Set 컬렉션 클래스는 다음과 같은 특징을 가집니다.
+		// 1. 요소의 저장 순서를 유지하지 않습니다.
+		// 2. 같은 요소의 중복 저장을 허용하지 않습니다.
+        Set<Character> s = hm1.keySet();
+        for (Character c : s) {
+            if (hm2.containsKey(c)) {
+                condition = true;
+                break;
             }
-        }        
-        System.out.println(yn);
-        return yn;
+        }
+        return (condition) ? "YES" : "NO";
 
     }
 
